@@ -1,59 +1,99 @@
 body {
     font-family: 'Times New Roman', Times, serif;
-    background-color: #fdf7f0;
-    color: #5a3c1f;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    background-color: #fdf5e6; 
+    color: #5a3c1f;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: brown;
+    margin-top: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #d5b4a0;
+}
+
+.header h1 {
+    margin: 0;
+    color: brown;
+    font-size: x-large;
+}
+
+.content {
+    margin: 20px;
+    font-size: medium;
+    color: #5a3c1f;
 }
 
 .upload-box {
-    background-color: #a0522d;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #8b4513;
+    border-radius: 5px;
+    background-color: #d5b4a0;
+    max-width: 400px;
     text-align: center;
 }
 
-.upload-box label {
+.upload-box input, .upload-box label, .upload-box button {
+    margin: 10px 0;
     display: block;
-    margin-bottom: 5px;
+    width: 100%;
 }
 
-.upload-box input,
 .upload-box button {
-    margin-bottom: 10px;
+    padding: 10px;
+    background-color: brown;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-box button:hover {
+    background-color: #a0522d;
 }
 
 .image-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 20px;
+    display: none;
+    margin: 20px;
+    text-align: center;
 }
 
 .image-display img {
-    max-width: 400px;
-    border: 5px solid #a0522d;
-    border-radius: 5px;
+    max-width: 19%;
+    height: auto;
+    position: relative;
+    left: -200px; 
 }
 
 .button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    text-align: center; 
+    position: relative;
+    top: 150px; 
+    left: -650px; 
 }
 
 .button-container button {
-    background-color: #a0522d;
+    margin: 5px;
+    padding: 10px;
+    background-color: brown;
     color: white;
     border: none;
-    padding: 10px;
-    cursor: pointer;
     border-radius: 5px;
+    width: 240px;
+    height: 70px;
+    cursor: pointer;
 }
 
 .button-container button:hover {
-    background-color: #804000;
+    background-color: #a0522d;
 }

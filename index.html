@@ -1,42 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glycan Arrays Tool</title>
+    <title>Glycan Arrays Analysis</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
 </head>
 <body>
-    <!-- Initial Upload Box -->
-    <div class="upload-box">
-        <h2>Upload Image</h2>
-        <input type="file" id="image-upload" accept=".tif">
-        <br><br>
-        <label for="outer-grid-columns">Outer Grid Columns</label>
-        <input type="number" id="outer-grid-columns">
-        <br><br>
-        <label for="outer-grid-rows">Outer Grid Rows</label>
-        <input type="number" id="outer-grid-rows">
-        <br><br>
-        <label for="inner-grid-columns">Inner Grid Columns</label>
-        <input type="number" id="inner-grid-columns">
-        <br><br>
-        <label for="inner-grid-rows">Inner Grid Rows</label>
-        <input type="number" id="inner-grid-rows">
-        <br><br>
-        <button id="save-button">Save</button>
+    <div class="header">
+        <h1>Glycan Arrays Analysis</h1>
+        <h1>Hsieh-Wilson Lab, California Institute of Technology</h1>
+    </div>
+    <div class="line"></div>
+
+    <div class="content">
+        <p>
+            Description and Instructions.
+        </p>
     </div>
 
-    <!-- Image and Buttons Section -->
-    <div class="image-container" style="display: none;">
+    <div class="upload-box">
+        <h2>Upload Image</h2>
+        <form id="upload-form">
+            <label for="image-upload">Select Image:</label>
+            <input type="file" id="image-upload" name="image" accept="image/*">
+            <label for="outer-grid-columns">Outer Grid Columns:</label>
+            <input type="number" id="outer-grid-columns" name="outerGridColumns">
+            <label for="outer-grid-rows">Outer Grid Rows:</label>
+            <input type="number" id="outer-grid-rows" name="outerGridRows">
+            <label for="inner-grid-columns">Inner Grid Columns:</label>
+            <input type="number" id="inner-grid-columns" name="innerGridColumns">
+            <label for="inner-grid-rows">Inner Grid Rows:</label>
+            <input type="number" id="inner-grid-rows" name="innerGridRows">
+            <button type="button" id="save-button">Save</button>
+        </form>
+    </div>
+
+    <div class="image-container">
         <div class="image-display">
             <img id="uploaded-image" src="" alt="Uploaded Image">
         </div>
         <div class="button-container">
-            <button onclick="manipulateImage('rotate')">Rotate</button>
             <button onclick="manipulateImage('grayscale')">Grayscale</button>
             <button onclick="manipulateImage('invert')">Invert Colors</button>
-            <!-- Add more buttons as needed -->
+            <button onclick="manipulateImage('mean-thresholding')">Mean Thresholding</button>
         </div>
     </div>
 
